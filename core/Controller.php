@@ -4,7 +4,6 @@ class Controller extends Application
 {
     protected $controller, $action;
     public $view;
-    public $displayErrors = [];
 
     public function __construct($controller, $action)
     {

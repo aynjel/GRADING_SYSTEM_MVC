@@ -53,6 +53,10 @@ class Database{
         }
     }
 
+    public function findFirst($table, $params = []){
+        return $this->find($table, $params)->first();
+    }
+
     public function first(){
         return (!empty($this->results)) ? $this->results[0] : [];
     }
@@ -75,6 +79,10 @@ class Database{
 
     public function get($table, $where){
         return $this->query("SELECT * FROM {$table} WHERE {$where}");
+    }
+
+    public function get_columns($table){
+        return $this->query("SHOW COLUMNS FROM {$table}");
     }
 
     public function insert($table, $fields = []){

@@ -125,7 +125,7 @@ class Validate{
     }
 
     public function passed(){
-        return $this->_passed;
+        return $this->_passed = true;
     }
 
     public function displayErrors(){

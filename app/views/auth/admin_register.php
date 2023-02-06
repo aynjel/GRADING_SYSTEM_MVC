@@ -35,17 +35,6 @@
                                 name="address" value="<?= Helper::old('address'); ?>" required>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <select name="gender" class="form-control border-secondary" required>
-                                <option selected hidden disabled>Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control border-secondary" placeholder="Date of Birth (MM/DD/YYYY)"
-                                name="dob" value="<?= Helper::old('dob'); ?>" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
                             <input type="text" class="form-control border-secondary" placeholder="Username"
                                 name="username" value="<?= Helper::old('username'); ?>" required>
                         </div>
@@ -56,10 +45,6 @@
                         <div class="col-md-6 mb-3">
                             <input type="password" class="form-control border-secondary" placeholder="Password"
                                 name="password" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="password" class="form-control border-secondary" placeholder="Confirm Password"
-                                name="confirm_password" required>
                         </div>
                         <div class="col-md-12 mb-3">
                             <button type="submit" name="submit" class="btn btn-primary btn-block">Register</button>

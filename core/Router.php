@@ -24,4 +24,26 @@ class Router{
             die('That method does not exist in the controller \"'.$controller_name.'\"');
         }
     }
+
+    public static function redirect($location){
+        if(!headers_sent()){
+            header('Location: '.Config::PROJECT_ROOT.$location);
+            exit;
+        }else{
+            echo '<script type="text/javascript">';
+            echo 'window.location.href="'.Config::PROJECT_ROOT.$location.'";';
+            echo '</script>';
+            echo '<noscript>';
+            echo '<meta http-equiv="refresh" content="0;url='.$location.'" />';
+            echo '</noscript>'; exit;
+        }
+    }
+
+    public static function getFormErrors(){
+        if(isset($_SESSION['form_errors'])){
+            $errors = $_SESSION['form_errors'];
+            unset($_SESSION['form_errors']);
+            return $errors;
+        }
+    }
 }

@@ -2,6 +2,7 @@
 
 class View{
     protected $_head, $_body, $_siteTitle = Config::SITE_TITLE, $_outputBuffer, $_layout = Config::DEFAULT_LAYOUT, $css, $js;
+    public $displayErrors;
 
     public function __construct(){}
 
@@ -71,5 +72,13 @@ class View{
 
     public function img($path){
         return $this->assets('images/' . $path);
+    }
+
+    public function displayErrors(){
+        return $this->displayErrors;
+    }
+
+    public function setFormErrors($errors){
+        $this->displayErrors = $errors;
     }
 }
